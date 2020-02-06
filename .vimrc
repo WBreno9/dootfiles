@@ -1,61 +1,37 @@
-call plug#begin('~/.vim/plugged')
+set nocompatible
+filetype off
 
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin('~/.vim/plugged')
 
-" Plug 'vim-syntastic/syntastic'
+Plugin 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
-Plug 'tpope/vim-surround'
+Plugin 'tpope/vim-surround'
 
-Plug 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 
-Plug 'ctrlpvim/ctrlp.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
-Plug 'dylanaraps/wal.vim'
-
-Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'shougo/deoplete-clangx'
-Plug 'sebastianmarkow/deoplete-rust'
-" Plug 'racer-rust/vim-racer'
+Plugin 'dylanaraps/wal.vim'
 
 " Plug 'valloric/youcompleteme'
 
-" Plug 'yggdroot/indentline'
+Plugin 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
-Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
-
-call plug#end()
+call vindle#end()
 
 colorscheme wal
 
-let g:deoplete#sources#rust#rust_source_path='/home/wbreno/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
-let g:deoplete#sources#rust#racer_binary='/home/wbreno/.cargo/bin/racer'
-
-
-"let g:airline_powerline_fonts = 1
-
-if has("nvim")
-	let g:deoplete#enable_at_startup = 1
-	autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | silent! pclose | endif
-endif
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
-
 let g:airline_theme='serene'
-
-"let mapleader=<BS>
 
 map <F2> :NERDTreeToggle<cr>
 noremap <leader>y "*y
