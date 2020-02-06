@@ -22,7 +22,7 @@ Plugin 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 
-call vindle#end()
+call vundle#end()
 
 colorscheme wal
 
