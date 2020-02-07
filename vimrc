@@ -22,6 +22,8 @@ Plugin 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 
+Plugin 'lervag/vimtex'
+
 call vundle#end()
 
 colorscheme wal
@@ -65,7 +67,6 @@ function SetCMapping()
 	noremap <F9> :!make clean<cr>
 	setlocal foldmethod=syntax
 endfunction
-
 autocmd FileType c   :call SetCMapping()
 autocmd FileType cpp :call SetCMapping()
 
@@ -76,7 +77,6 @@ function SetRustMapping()
 	noremap <F9> :!cargo clean<cr>
 	setlocal foldmethod=syntax
 endfunction
-
 autocmd FileType rust :call SetRustMapping()
 
 set nowrap
