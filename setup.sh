@@ -14,6 +14,12 @@ for file in $home_files; do
 	ln -sf "$(pwd)/$file" "$HOME/.$file"
 done
 
+config_files="sxhkd/sxhkdrc bspwm/bspwmrc rofi/config"
+for file in $config_files; do
+	mkdir -p "$HOME/.config/${file%/*}"
+	ln -sf "$(pwd)/config/$file" "$HOME/.config/$file"
+done
+
 cd st/st-0.8.2
 make clean
 sudo make install
