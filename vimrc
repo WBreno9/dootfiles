@@ -1,10 +1,14 @@
+set encoding=utf-8
 set nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin('~/.vim/plugged')
 
+Plugin 'dylanaraps/wal.vim'
+
 Plugin 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plugin 'scrooloose/nerdcommenter'
 
 Plugin 'tpope/vim-surround'
 
@@ -13,21 +17,17 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
-Plugin 'dylanaraps/wal.vim'
-
-" Plug 'valloric/youcompleteme'
-
-Plugin 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
-
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 
 Plugin 'lervag/vimtex'
+
+Plugin 'ycm-core/YouCompleteMe'
 
 call vundle#end()
 
 colorscheme wal
-
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -78,6 +78,9 @@ function SetRustMapping()
 	setlocal foldmethod=syntax
 endfunction
 autocmd FileType rust :call SetRustMapping()
+
+autocmd BufWritePre *.tex :!pdftex %
+autocmd BufWritePre *.latex :!pdflatex %
 
 set nowrap
 " set completeopt-=preview
