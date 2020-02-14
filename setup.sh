@@ -20,7 +20,19 @@ for file in $config_files; do
 	ln -sf "$(pwd)/config/$file" "$HOME/.config/$file"
 done
 
+wal -R
+
 cd st/st-0.8.2
+
+cp ~/.cache/wal/colors-wal-st.h .colors-wal-st.h
+
+sed -i 's/defaultfg = 257/defaultfg = 256/' .colors-wal-st.h
+sed -i 's/defaultbg = 0/defaultbg = 257/' .colors-wal-st.h
+
+awk '/\[256\]/{print gensub(/256/,"257","g");next;}
+/\[257\]/{print gensub(/257/,"256","g");next;}
+{print;} ' < .colors-wal-st.h > colors-wal-st.h
+
 make clean
 sudo make install
 
