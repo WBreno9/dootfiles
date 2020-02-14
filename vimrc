@@ -29,6 +29,8 @@ call vundle#end()
 
 colorscheme wal
 
+syntax on
+
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
