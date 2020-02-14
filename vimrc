@@ -67,7 +67,7 @@ function SetCMapping()
 	noremap <F5> :!make<cr>
 	noremap <F6> :!make run<cr>
 	noremap <F9> :!make clean<cr>
-	setlocal foldmethod=syntax
+	" setlocal foldmethod=syntax
 endfunction
 autocmd FileType c   :call SetCMapping()
 autocmd FileType cpp :call SetCMapping()
@@ -77,7 +77,7 @@ function SetRustMapping()
 	noremap <F5> :!cargo build<cr>
 	noremap <F6> :!cargo run<cr>
 	noremap <F9> :!cargo clean<cr>
-	setlocal foldmethod=syntax
+	" setlocal foldmethod=syntax
 endfunction
 autocmd FileType rust :call SetRustMapping()
 
