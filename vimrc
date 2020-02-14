@@ -79,8 +79,8 @@ function SetRustMapping()
 endfunction
 autocmd FileType rust :call SetRustMapping()
 
-autocmd BufWritePre *.tex :!pdftex %
-autocmd BufWritePre *.latex :!pdflatex %
+autocmd BufWritePost *.tex :!pdftex % && pkill -HUP mupdf && mupdf %
+autocmd BufWritePost *.latex :!pdflatex % && pkill -HUP mupdf && mupdf %
 
 set nowrap
 " set completeopt-=preview
