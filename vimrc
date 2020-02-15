@@ -17,9 +17,9 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+" Plugin 'godlygeek/tabular'
+" Plugin 'plasticboy/vim-markdown'
+" Plugin 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 
 Plugin 'lervag/vimtex'
 
@@ -30,11 +30,11 @@ call vundle#end()
 colorscheme wal
 
 syntax on
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
+ 
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+ 
 let g:airline_theme='serene'
 
 map <F2> :NERDTreeToggle<cr>
@@ -85,4 +85,4 @@ autocmd BufWritePost *.tex :!pdftex % && pkill -HUP mupdf && mupdf %
 autocmd BufWritePost *.latex :!pdflatex % && pkill -HUP mupdf && mupdf %
 
 set nowrap
-" set completeopt-=preview
+set completeopt-=preview
