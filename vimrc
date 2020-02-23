@@ -77,6 +77,10 @@ function SetRustMapping()
 	noremap <F5> :!cargo build<cr>
 	noremap <F6> :!cargo run<cr>
 	noremap <F9> :!cargo clean<cr>
+
+	set expandtab
+	set shiftwidth=4
+	set softtabstop=4
 	" setlocal foldmethod=syntax
 endfunction
 autocmd FileType rust :call SetRustMapping()
