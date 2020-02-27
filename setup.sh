@@ -14,7 +14,13 @@ for file in $home_files; do
 	ln -sf "$(pwd)/$file" "$HOME/.$file"
 done
 
-config_files="sxhkd/sxhkdrc bspwm/bspwmrc rofi/config qutebrowser/autoconfig.yml"
+config_files="
+	sxhkd/sxhkdrc 
+	bspwm/bspwmrc 
+	rofi/config 
+	qutebrowser/autoconfig.yml
+	mimeapps.list"
+
 for file in $config_files; do
 	mkdir -p "$HOME/.config/${file%/*}"
 	ln -sf "$(pwd)/config/$file" "$HOME/.config/$file"
