@@ -10,18 +10,17 @@ Plugin 'dylanaraps/wal.vim'
 Plugin 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plugin 'scrooloose/nerdcommenter'
 
-Plugin 'tpope/vim-surround'
+Plugin 'ctrlpvim/ctrlp.vim'
 
+Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
-" Plugin 'godlygeek/tabular'
-" Plugin 'plasticboy/vim-markdown'
-" Plugin 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+Plugin 'majutsushi/tagbar'
 
-Plugin 'lervag/vimtex'
+Plugin 'godlygeek/tabular'
 
 Plugin 'ycm-core/YouCompleteMe'
 
@@ -37,6 +36,7 @@ syntax on
  
 let g:airline_theme='serene'
 
+map <F3> :TagbarToogle<cr>
 map <F2> :NERDTreeToggle<cr>
 noremap <leader>y "*y
 noremap <leader>p "+p
