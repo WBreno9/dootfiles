@@ -36,7 +36,7 @@ syntax on
  
 let g:airline_theme='serene'
 
-map <F3> :TagbarToogle<cr>
+map <F3> :Tagbar<cr>
 map <F2> :NERDTreeToggle<cr>
 noremap <leader>y "*y
 noremap <leader>p "+p
