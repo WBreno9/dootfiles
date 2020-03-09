@@ -14,14 +14,18 @@ for file in $home_files; do
 	ln -sf "$(pwd)/$file" "$HOME/.$file"
 done
 
-config_files="
-	sxhkd/sxhkdrc 
-	bspwm/bspwmrc 
-	rofi/config 
-	qutebrowser/autoconfig.yml
-	mimeapps.list"
+config_files=(
+	'sxhkd/sxhkdrc'
+	'bspwm/bspwmrc'
+	'rofi/config'
+	'qutebrowser/autoconfig.yml'
+	'mimeapps.list'
+	'Code - OSS/User/settings.json'
+	)
 
-for file in $config_files; do
+for file in "${config_files[@]}"; do
+	echo -e "creating symlink for $file"
+
 	mkdir -p "$HOME/.config/${file%/*}"
 	ln -sf "$(pwd)/config/$file" "$HOME/.config/$file"
 done

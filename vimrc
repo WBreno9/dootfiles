@@ -22,6 +22,7 @@ Plugin 'majutsushi/tagbar'
 
 Plugin 'godlygeek/tabular'
 
+" Plugin 'ternjs/tern_for_vim', { 'for': 'javascript' }
 Plugin 'ycm-core/YouCompleteMe'
 
 call vundle#end()
@@ -55,9 +56,9 @@ noremap to :tabnext<cr>
 noremap <c-a> :vsplit<cr>
 noremap <c-i> :split<cr>
 
-nnoremap tb :tabnew<cr>
-nnoremap th :tabnext<cr>
-nnoremap tl :tabprevious<cr>
+nnoremap <c-h> :tabnew<cr>
+nnoremap <c-j> :tabnext<cr>
+nnoremap <c-k> :tabprevious<cr>
 
 inoremap jk <esc>
 inoremap <esc> <nop>
@@ -84,6 +85,14 @@ function SetRustMapping()
 	" setlocal foldmethod=syntax
 endfunction
 autocmd FileType rust :call SetRustMapping()
+
+function SetJS()
+	echom "Setting JS configs..."
+	set expandtab
+	set shiftwidth=2
+	set softtabstop=2
+endfunction
+autocmd FileType javascript :call SetJS()
 
 autocmd BufWritePost *.tex :!pdftex % && pkill -HUP mupdf && mupdf %
 autocmd BufWritePost *.latex :!pdflatex % && pkill -HUP mupdf && mupdf %

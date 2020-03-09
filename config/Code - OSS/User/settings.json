@@ -1,0 +1,41 @@
+{
+    "window.menuBarVisibility": "toggle",
+    "workbench.colorTheme": "Dracula",
+
+    "vim.insertModeKeyBindings": [
+    {
+        "before": ["j", "k"],
+        "after": ["<esc>"],
+    },
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<c-h>"],
+      "commands": [":tabnew"]
+    },
+    {
+      "before": ["<c-j>"],
+      "commands": [":tabnext"]
+    },
+    {
+      "before": ["<c-k>"],
+      "commands": [":tabprev"]
+    },
+    {
+      "before": ["<c-a>"],
+      "commands": [":vsplit"]
+    },
+    {
+      "before": ["<space>"],
+      "after": ["<c-w>", "w"]
+    },
+    {
+      "before": ["<c-i>"],
+      "commands": [
+        "workbench.action.toggleSidebarVisibility",
+      ]
+    },
+  ],
+  "window.zoomLevel": 0,
+  "workbench.startupEditor": "newUntitledFile"
+}
