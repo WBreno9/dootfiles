@@ -2,6 +2,8 @@ set encoding=utf-8
 set nocompatible
 filetype off
 
+filetype plugin on
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin('~/.vim/plugged')
 
@@ -9,8 +11,6 @@ Plugin 'dylanaraps/wal.vim'
 
 Plugin 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plugin 'scrooloose/nerdcommenter'
-
-Plugin 'ctrlpvim/ctrlp.vim'
 
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
@@ -22,18 +22,18 @@ Plugin 'majutsushi/tagbar'
 
 Plugin 'godlygeek/tabular'
 
-" Plugin 'ternjs/tern_for_vim', { 'for': 'javascript' }
-Plugin 'ycm-core/YouCompleteMe'
+Plugin 'sheerun/vim-polyglot'
+
+if $VIM_LIGHTWEIGHT != "ON"
+	Plugin 'dense-analysis/ale'
+	Plugin 'ctrlpvim/ctrlp.vim'
+endif
 
 call vundle#end()
 
 colorscheme wal
 
 syntax on
- 
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
  
 let g:airline_theme='serene'
 
@@ -48,11 +48,6 @@ noremap tn :tabnew<cr>
 noremap ti :tabprevious<cr>
 noremap to :tabnext<cr>
 
-"noremap bn :bnew<cr>
-"nnoremap bi :bprevious<cr>
-"nnoremap bo :bnext<cr>
-"nnoremap <tab> :bnext<cr>
-
 noremap <c-a> :vsplit<cr>
 noremap <c-i> :split<cr>
 
@@ -62,37 +57,6 @@ nnoremap <c-k> :tabprevious<cr>
 
 inoremap jk <esc>
 inoremap <esc> <nop>
-
-function SetCMapping()
-	echom "Setting C/C++ make mappings"
-	noremap <F5> :!make<cr>
-	noremap <F6> :!make run<cr>
-	noremap <F9> :!make clean<cr>
-	" setlocal foldmethod=syntax
-endfunction
-autocmd FileType c   :call SetCMapping()
-autocmd FileType cpp :call SetCMapping()
-
-function SetRustMapping()
-	echom "Setting Rust make mappings"
-	noremap <F5> :!cargo build<cr>
-	noremap <F6> :!cargo run<cr>
-	noremap <F9> :!cargo clean<cr>
-
-	set expandtab
-	set shiftwidth=4
-	set softtabstop=4
-	" setlocal foldmethod=syntax
-endfunction
-autocmd FileType rust :call SetRustMapping()
-
-function SetJS()
-	echom "Setting JS configs..."
-	set expandtab
-	set shiftwidth=2
-	set softtabstop=2
-endfunction
-autocmd FileType javascript :call SetJS()
 
 autocmd BufWritePost *.tex :!pdftex % && pkill -HUP mupdf && mupdf %
 autocmd BufWritePost *.latex :!pdflatex % && pkill -HUP mupdf && mupdf %

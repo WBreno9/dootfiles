@@ -20,7 +20,6 @@ config_files=(
 	'rofi/config'
 	'qutebrowser/autoconfig.yml'
 	'mimeapps.list'
-	'Code - OSS/User/settings.json'
 	)
 
 for file in "${config_files[@]}"; do
