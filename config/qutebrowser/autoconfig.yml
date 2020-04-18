@@ -16,7 +16,7 @@ settings:
   content.notifications:
     https://www.reddit.com: false
   statusbar.hide:
-    global: true
+    global: false
   tabs.show:
     global: switching
   url.default_page:

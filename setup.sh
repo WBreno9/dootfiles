@@ -8,7 +8,7 @@ cat > env.sh <<-EOF
 	export ST_CONFIG="$DOOTS_DIR/st/st-0.8.2/config.h"
 EOF
 
-home_files="vimrc tmux.conf xinitrc"
+home_files="tmux.conf xinitrc"
 
 for file in $home_files; do
 	ln -sf "$(pwd)/$file" "$HOME/.$file"
@@ -19,6 +19,7 @@ config_files=(
 	'bspwm/bspwmrc'
 	'rofi/config'
 	'qutebrowser/autoconfig.yml'
+	'nvim/init.vim'
 	'mimeapps.list'
 	)
 
