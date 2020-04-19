@@ -20,7 +20,7 @@ config_files=(
 	'rofi/config'
 	'qutebrowser/autoconfig.yml'
 	'nvim/init.vim'
-	'mimeapps.list'
+	'./mimeapps.list'
 	)
 
 for file in "${config_files[@]}"; do
