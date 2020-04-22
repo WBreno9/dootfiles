@@ -11,14 +11,24 @@ Plug 'preservim/nerdtree'
 
 call plug#end()
 
-let g:lightline = { 'colorscheme': 'wombat' }
-
 set noshowmode
 
+let g:lightline = { 'colorscheme': 'wombat' }
+
+set autoindent
 set smartindent
-set tabstop=2
-set expandtab
-set shiftwidth=2
+set tabstop=8
+
+" File especific formating styles
+augroup c_formating
+  autocmd Filetype asm,c,make :setlocal tabstop=4 
+augroup END
+
+augroup js_formating
+  autocmd Filetype javascript :setlocal tabstop=2
+  autocmd Filetype javascript :setlocal shiftwidth=2
+  autocmd Filetype javascript :setlocal expandtab!
+augroup END
 
 inoremap jk <esc>
 
@@ -29,3 +39,4 @@ noremap <c-a> :vsplit<cr>
 
 noremap tn    :tabnew<cr>
 noremap <c-j> :tabnext<cr>
+
