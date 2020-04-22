@@ -22,7 +22,7 @@ set shiftwidth=2
 
 inoremap jk <esc>
 
-noremap <F2> :NERDTreetoggle<cr>
+noremap <F2> :NERDTreeToggle<cr>
 
 noremap <space> <c-w>W
 noremap <c-a> :vsplit<cr>
