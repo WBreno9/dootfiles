@@ -21,7 +21,7 @@ set tabstop=8
 
 " File especific formating styles
 augroup c_formating
-  autocmd Filetype asm,c,make :setlocal tabstop=4 
+  autocmd Filetype c :setlocal tabstop=4 
 augroup END
 
 augroup js_formating
