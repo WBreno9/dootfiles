@@ -4,11 +4,11 @@
 
 # terminal emulator
 super + Return
-	kitty
+	st
 
 # program launcher
 super + p 
-	rofi -show run	
+    dmenu_run -b
 
 super + i
 	qutebrowser
