@@ -1,36 +1,111 @@
+""""""""""""""""""""""
+" LEARNING keymap!!! "
+""""""""""""""""""""""
+
+    noremap h <nop>
+    noremap l <nop>
+
+""""""""""""""""""""""
+" LEARNING keymap!!! "
+""""""""""""""""""""""
+
 call plug#begin(stdpath('data') . '/plugged')
+
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-Plug 'gruvbox-community/gruvbox'
-
 Plug 'vim-airline/vim-airline'
+
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+
+Plug 'dylanaraps/wal.vim'
+Plug 'gruvbox-community/gruvbox'
+Plug 'nanotech/jellybeans.vim'
+Plug 'sickill/vim-monokai'
+
+Plug 'elixir-editors/vim-elixir'
+Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
-colorscheme gruvbox 
+colorscheme jellybeans 
+
+filetype on
+
+set guicursor=
 
 set noshowmode
-
-set background=dark
-
 set relativenumber
 
-set autoindent
-set smartindent
+set textwidth=80
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set autoindent
+set smartindent
 
-" File especific formating styles
+set smartcase
+set incsearch
+set hlsearch!
+
+set noswapfile
+set nobackup
+set nowritebackup
+set undodir="~/.vim/undodir"
+set undofile
+set hidden
+
+set colorcolumn=80
+highlight ColorColumn ctermbg=lightgray guibg=lightgray
+set background=dark
+
+let g:netrw_banner=0
+
+let mapleader=" "
 
 inoremap jk <esc>
+vnoremap <bs> <esc>
 tnoremap jk <c-\><c-n>
 
-noremap <space> <c-w>W
-noremap <c-a> :vsplit<cr>
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>es :source $MYVIMRC<cr>
+
+nnoremap <leader>tr :vsplit<bar> :wincmd L<bar> :vertical resize 80<bar> :term<cr>
+nnoremap <leader>ex :Ex<cr>
+
+nnoremap <leader>o <c-w><c-o>
+
+noremap <c-j> :wincmd j<cr>
+noremap <c-k> :wincmd k<cr>
+noremap <c-l> :wincmd l<cr>
+noremap <c-h> :wincmd h<cr>
+
+noremap <leader>v :vsplit<cr>
+noremap <leader>h :split<cr>
+
+noremap <leader>f :Files<cr>
+noremap <leader>g :GFiles<cr>
+noremap <leader>s :Snippets<cr>
+noremap <leader>b :Buffers<cr>
+
+nmap <silent> <leader>df <Plug>(coc-definition)
+nmap <silent> <leader>rf <Plug>(coc-references)
+nmap <silent> <leader>rr <Plug>(coc-rename)
+
+" File especific formating styles
+augroup c_options
+  autocmd FileType c,make,sh setlocal tabstop=8
+  autocmd FileType c,make,sh setlocal shiftwidth=8
+  autocmd FileType c,make,sh setlocal noexpandtab
+augroup END
+
+augroup rust_options
+  autocmd FileType rust noremap <buffer> <F5> :!cargo run <cr>
+  autocmd FileType rust noremap <buffer> <F6> :!cargo build <cr>
+augroup END
