@@ -34,7 +34,7 @@ Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
-colorscheme jellybeans 
+colorscheme gruvbox 
 
 filetype on
 
