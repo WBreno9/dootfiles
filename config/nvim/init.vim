@@ -97,6 +97,7 @@ noremap <leader>g :GFiles<cr>
 noremap <leader>s :Snippets<cr>
 noremap <leader>b :Buffers<cr>
 noremap <leader>t :BTags<cr>
+noremap <leader>c :Commits<cr>
 
 noremap <leader>w :w<cr>
 noremap <leader>q :q<cr>
