@@ -104,9 +104,10 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export EDITOR=nvim
+export EMSCRIPTEN_DIR="/usr/lib/emscripten"
 
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="/usr/lib/emscripten:$PATH"
+export PATH="${EMSCRIPTEN_DIR}:${PATH}"
 
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh

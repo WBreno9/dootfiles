@@ -18,6 +18,7 @@ config_files=(
 	'bspwm/bspwmrc'
 	'qutebrowser/autoconfig.yml'
 	'nvim/init.vim'
+	'nvim/coc-settings.json'
 	'./mimeapps.list'
 	)
 

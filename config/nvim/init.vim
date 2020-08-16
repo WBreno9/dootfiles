@@ -12,6 +12,7 @@
 call plug#begin(stdpath('data') . '/plugged')
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'jackguo380/vim-lsp-cxx-highlight'
 
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
