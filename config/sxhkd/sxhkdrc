@@ -13,6 +13,9 @@ super + p
 super + i
 	qutebrowser
 
+super + u
+    xmodmap ~/.Xmodmap
+
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
