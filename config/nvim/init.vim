@@ -97,6 +97,9 @@ noremap <c-k> :wincmd k<cr>
 noremap <c-l> :wincmd l<cr>
 noremap <c-h> :wincmd h<cr>
 
+noremap <leader>i :wincmd K<cr>
+noremap <leader>o :wincmd H<cr>
+
 noremap <leader>v :vsplit<cr>
 noremap <leader>h :split<cr>
 
@@ -114,7 +117,7 @@ nmap <silent> <leader>rr <Plug>(coc-rename)
 
 augroup vertical_split
     autocmd!
-    autocmd FileType help,fugitive wincmd L
+    autocmd FileType help wincmd L
 augroup END
 
 " File especific formating styles
