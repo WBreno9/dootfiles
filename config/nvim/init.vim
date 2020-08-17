@@ -37,9 +37,17 @@ Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
+set nocompatible
+
 colorscheme gruvbox 
 
-filetype on
+syntax enable
+
+filetype plugin on
+
+set path+=**
+set wildmenu
+set wildignore=**/node_modules/**
 
 set guicursor=
 
@@ -99,7 +107,6 @@ noremap <leader>c :Commits<cr>
 noremap <leader>t :BTags<cr>
 
 noremap <leader>w :w<cr>
-noremap <leader>q :q<cr>
 
 nmap <silent> <leader>df <Plug>(coc-definition)
 nmap <silent> <leader>rf <Plug>(coc-references)
