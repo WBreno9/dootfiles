@@ -23,7 +23,7 @@ for file in $home_files; do
 done
 
 for file in "${config_files[@]}"; do
-	file_pairs+=("$(pwd)config/$file $HOME/.config/$file")
+	file_pairs+=("$(pwd)/config/$file $HOME/.config/$file")
 done
 
 for file_pair in "${file_pairs[@]}"; do
