@@ -14,7 +14,7 @@ call plug#begin(stdpath('data') . '/plugged')
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 Plug 'jackguo380/vim-lsp-cxx-highlight'
-Plug 'ludovicchabant/vim-gutentags'
+" Plug 'ludovicchabant/vim-gutentags'
 
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -122,9 +122,9 @@ augroup END
 
 " File especific formating styles
 augroup c_options
-  autocmd FileType c,make,sh setlocal tabstop=8
-  autocmd FileType c,make,sh setlocal shiftwidth=8
-  autocmd FileType c,make,sh setlocal noexpandtab
+  autocmd FileType c,make setlocal tabstop=8
+  autocmd FileType c,make setlocal shiftwidth=8
+  autocmd FileType c,make setlocal noexpandtab
 augroup END
 
 augroup rust_options
