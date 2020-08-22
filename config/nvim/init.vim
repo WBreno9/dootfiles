@@ -5,8 +5,8 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'ludovicchabant/vim-gutentags'
 
-Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'rust-lang/rust.vim'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -20,9 +20,6 @@ Plug 'tpope/vim-surround'
 Plug 'dylanaraps/wal.vim'
 Plug 'gruvbox-community/gruvbox'
 Plug 'nanotech/jellybeans.vim'
-
-Plug 'elixir-editors/vim-elixir'
-Plug 'rust-lang/rust.vim'
 
 call plug#end()
 

@@ -1,4 +1,5 @@
 {
     "clangd.semanticHighlighting": true,
-    "clangd.disableDiagnostics": true
+    "clangd.disableDiagnostics": true,
+    "snippets.snipmate.enable": false
 }
