@@ -1,20 +1,9 @@
-""""""""""""""""""""""
-" LEARNING keymap!!! "
-""""""""""""""""""""""
-
-    noremap h <nop>
-    noremap l <nop>
-
-""""""""""""""""""""""
-" LEARNING keymap!!! "
-""""""""""""""""""""""
-
 call plug#begin(stdpath('data') . '/plugged')
 
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 Plug 'jackguo380/vim-lsp-cxx-highlight'
-" Plug 'ludovicchabant/vim-gutentags'
+Plug 'ludovicchabant/vim-gutentags'
 
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
