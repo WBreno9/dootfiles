@@ -5,7 +5,7 @@ cat > env.sh <<-EOF
 	export DOOTS_DIR="$(pwd)"
 EOF
 
-home_files="tmux.conf xinitrc zshrc bashrc"
+home_files="tmux.conf xinitrc zshrc bashrc Xmodmap"
 
 config_files=(
 	'sxhkd/sxhkdrc'
