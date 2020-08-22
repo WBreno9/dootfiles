@@ -13,6 +13,7 @@ config_files=(
 	'qutebrowser/autoconfig.yml'
 	'nvim/init.vim'
 	'nvim/coc-settings.json'
+	'alacritty/alacritty.yml'
 	'mimeapps.list'
 	)
 
