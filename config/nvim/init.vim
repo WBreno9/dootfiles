@@ -2,7 +2,7 @@ call plug#begin(stdpath('data') . '/plugged')
 
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
-Plug 'jackguo380/vim-lsp-cxx-highlight'
+" Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'ludovicchabant/vim-gutentags'
 
 Plug 'honza/vim-snippets'
@@ -27,14 +27,12 @@ let g:gruvbox_contrast_light="soft"
 let g:gruvbox_contrast_dark="hard"
 
 colorscheme gruvbox 
-set bg=light
+set bg=dark
 
 set colorcolumn=80
 highlight ColorColumn ctermbg=lightgray guibg=lightgray
 
-
 filetype plugin on
-filetype on
 
 set nocompatible
 
