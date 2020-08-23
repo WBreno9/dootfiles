@@ -17,25 +17,33 @@ Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 
-Plug 'dylanaraps/wal.vim'
 Plug 'gruvbox-community/gruvbox'
-Plug 'nanotech/jellybeans.vim'
 
 call plug#end()
 
-set nocompatible
-
-colorscheme gruvbox 
-
 syntax enable
 
+let g:gruvbox_contrast_light="soft"
+let g:gruvbox_contrast_dark="hard"
+
+colorscheme gruvbox 
+set bg=light
+
+set colorcolumn=80
+highlight ColorColumn ctermbg=lightgray guibg=lightgray
+
+
 filetype plugin on
+filetype on
+
+set nocompatible
 
 set path+=**
 set wildmenu
 set wildignore=**/node_modules/**
 
 set guicursor=
+set termguicolors
 
 set noshowmode
 set relativenumber
@@ -60,9 +68,6 @@ set undodir="~/.vim/undodir"
 set undofile
 set hidden
 
-set colorcolumn=80
-highlight ColorColumn ctermbg=lightgray guibg=lightgray
-set background=dark
 
 let g:netrw_banner=0
 
