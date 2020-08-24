@@ -111,8 +111,6 @@ augroup END
 
 " File especific formating styles
 augroup c_options
-  autocmd FileType c,make setlocal tabstop=8
-  autocmd FileType c,make setlocal shiftwidth=8
   autocmd FileType c,make setlocal noexpandtab
 augroup END
 
