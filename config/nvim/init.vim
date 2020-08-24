@@ -27,10 +27,10 @@ let g:gruvbox_contrast_light="soft"
 let g:gruvbox_contrast_dark="hard"
 
 colorscheme gruvbox 
-set bg=dark
 
 set colorcolumn=80
-highlight ColorColumn ctermbg=lightgray guibg=lightgray
+highlight ColorColumn ctermbg=0 guibg=lightgray
+set bg=dark
 
 filetype plugin on
 
@@ -117,4 +117,5 @@ augroup END
 augroup rust_options
   autocmd FileType rust noremap <buffer> <F5> :!cargo run <cr>
   autocmd FileType rust noremap <buffer> <F6> :!cargo build <cr>
+  autocmd FileType rust noremap <buffer> <F4> :!rustfmt %<cr>
 augroup END
