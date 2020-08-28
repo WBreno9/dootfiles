@@ -30,7 +30,7 @@ set termguicolors
 " let g:gruvbox_contrast_light="soft"
 " let g:gruvbox_contrast_dark="hard"
 
-" set bg=light
+set bg=light
 
 " set colorcolumn=80
 " highlight ColorColumn ctermbg=0 guibg=lightgray
@@ -47,7 +47,7 @@ set wildignore=**/node_modules/**
 
 set guicursor=
 
-set noshowmode
+" set noshowmode
 set relativenumber
 
 set textwidth=80
