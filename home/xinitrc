@@ -4,4 +4,6 @@ xrdb -merge ~/.Xresources
 xmodmap ~/.Xmodmap
 xsetroot -solid gray
 
+redshift -l -7.136745:-34.877316 &
+
 exec bspwm

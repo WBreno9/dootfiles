@@ -16,10 +16,11 @@ Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 
-Plug 'gruvbox-community/gruvbox'
+" Plug 'gruvbox-community/gruvbox'
 
 Plug 'ajgrf/parchment'
 Plug 'YorickPeterse/vim-paper'
+Plug 'rafi/awesome-vim-colorschemes'
 
 call plug#end()
 
