@@ -1,5 +1,7 @@
 [[ $- != *i* ]] && return
 
+cat ~/.cache/wal/sequences
+
 alias ls='ls --color=auto'
 alias la='ls -la --color=auto'
 

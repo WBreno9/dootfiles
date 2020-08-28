@@ -20,7 +20,7 @@ font:
 
   bold:
     family: Fira Code
-    style: Regular 
+    style: Regular
 
   italic:
     family: Fira Code
@@ -30,7 +30,7 @@ font:
     family: Fira Code
     style: Italic
 
-  size: 12.0
+  size: 10.0
 
 bell:
   duration: 0

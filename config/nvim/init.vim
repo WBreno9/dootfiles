@@ -2,7 +2,6 @@ call plug#begin(stdpath('data') . '/plugged')
 
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
-" Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'ludovicchabant/vim-gutentags'
 
 Plug 'honza/vim-snippets'
@@ -11,7 +10,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline'
 Plug 'Yggdroot/indentLine'
 
 Plug 'tpope/vim-fugitive'
@@ -19,18 +18,23 @@ Plug 'tpope/vim-surround'
 
 Plug 'gruvbox-community/gruvbox'
 
+Plug 'ajgrf/parchment'
+Plug 'YorickPeterse/vim-paper'
+
 call plug#end()
 
 syntax enable
+set termguicolors
 
-let g:gruvbox_contrast_light="soft"
-let g:gruvbox_contrast_dark="hard"
+" let g:gruvbox_contrast_light="soft"
+" let g:gruvbox_contrast_dark="hard"
 
-colorscheme gruvbox 
+" set bg=light
 
-set colorcolumn=80
-highlight ColorColumn ctermbg=0 guibg=lightgray
-set bg=dark
+" set colorcolumn=80
+" highlight ColorColumn ctermbg=0 guibg=lightgray
+
+colorscheme parchment 
 
 filetype plugin on
 
@@ -41,7 +45,6 @@ set wildmenu
 set wildignore=**/node_modules/**
 
 set guicursor=
-set termguicolors
 
 set noshowmode
 set relativenumber
@@ -49,8 +52,8 @@ set relativenumber
 set textwidth=80
 set nowrap
 
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 set autoindent
 set smartindent
@@ -65,7 +68,6 @@ set nowritebackup
 set undodir="~/.vim/undodir"
 set undofile
 set hidden
-
 
 let g:netrw_banner=0
 
@@ -119,3 +121,4 @@ augroup rust_options
   autocmd FileType rust noremap <buffer> <F6> :!cargo build <cr>
   autocmd FileType rust noremap <buffer> <F4> :!rustfmt %<cr>
 augroup END
+
