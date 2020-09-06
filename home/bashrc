@@ -9,10 +9,12 @@ alias gst='git status'
 alias gcm='git commit'
 
 export EDITOR=nvim
-export EMSCRIPTEN_DIR="/usr/lib/emscripten"
-
 export PATH="$HOME/.local/bin:$PATH"
+
+export EMSCRIPTEN_DIR="/usr/lib/emscripten"
 export PATH="${EMSCRIPTEN_DIR}:${PATH}"
+
+export PATH="$(go env GOPATH)/bin:${PATH}"
 
 source /usr/share/fzf/key-bindings.bash
 source /usr/share/fzf/completion.bash

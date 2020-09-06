@@ -15,22 +15,22 @@ window:
 # Font configuration
 font:
   normal:
-    family: IBM Plex Mono
+    family: Inconsolata 
     style: Regular
 
   bold:
-    family: IBM Plex Mono
+    family: Inconsolata
     style: Regular
 
   italic:
-    family: IBM Plex Mono
+    family: Inconsolata
     style: Italic
 
   bold_italic:
-    family: IBM Plex Mono
+    family: Inconsolata
     style: Italic
 
-  size: 10.5
+  size: 11.0
 
 bell:
   duration: 0

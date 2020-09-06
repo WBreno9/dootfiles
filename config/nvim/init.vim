@@ -5,37 +5,44 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'ludovicchabant/vim-gutentags'
 
 Plug 'honza/vim-snippets'
+
 Plug 'rust-lang/rust.vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'uarun/vim-protobuf'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-" Plug 'vim-airline/vim-airline'
-Plug 'Yggdroot/indentLine'
-
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 
-" Plug 'gruvbox-community/gruvbox'
-
+Plug 'gruvbox-community/gruvbox'
 Plug 'ajgrf/parchment'
-Plug 'YorickPeterse/vim-paper'
-Plug 'rafi/awesome-vim-colorschemes'
 
 call plug#end()
+
+let padding = '    '
+
+set statusline=%{padding}
+set statusline+=%f
+
+" if !empty(coc#status())
+  set statusline+=\ -\ 
+  set statusline+=%{coc#status()}
+" endif
+
+set statusline+=%=%4l,%-4c
+set statusline+=%{padding}
 
 syntax enable
 set termguicolors
 
-" let g:gruvbox_contrast_light="soft"
-" let g:gruvbox_contrast_dark="hard"
+let g:gruvbox_contrast_light="soft"
+let g:gruvbox_contrast_dark="hard"
 
-set bg=light
-
-" set colorcolumn=80
-" highlight ColorColumn ctermbg=0 guibg=lightgray
-
-colorscheme parchment 
+colorscheme gruvbox
+set bg=dark
 
 filetype plugin on
 
@@ -49,12 +56,13 @@ set guicursor=
 
 " set noshowmode
 set relativenumber
+set number
 
 set textwidth=80
 set nowrap
 
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set expandtab
 set autoindent
 set smartindent
@@ -81,7 +89,7 @@ tnoremap jk <c-\><c-n>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>es :source $MYVIMRC<cr>
 
-nnoremap <leader>sh :vsplit<bar> :wincmd L<bar> :vertical resize 80<bar> :term<cr>
+nnoremap <leader>sh :rightb vs +term res 80<cr>
 nnoremap <leader>ex :Ex<cr>
 
 noremap <c-j> :wincmd j<cr>
