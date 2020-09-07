@@ -59,7 +59,6 @@ set wildignore=**/node_modules/**
 
 set guicursor=
 
-" set noshowmode
 set relativenumber
 set number
 
@@ -120,17 +119,12 @@ nmap <silent> <leader>df <Plug>(coc-definition)
 nmap <silent> <leader>rf <Plug>(coc-references)
 nmap <silent> <leader>rr <Plug>(coc-rename)
 
-" augroup status_line
-"     autocmd!
-"     autocmd BufReadPre,FileReadPre * :call NetrwStatusLine()<cr>
-" augroup END
-
 augroup vertical_split
     autocmd!
     autocmd FileType help wincmd L
 augroup END
 
-" File especific formating styles
+" Filetype especific formating styles
 augroup c_options
   autocmd FileType c,make setlocal noexpandtab
 augroup END
