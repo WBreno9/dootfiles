@@ -2,7 +2,7 @@ call plug#begin(stdpath('data') . '/plugged')
 
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
-Plug 'ludovicchabant/vim-gutentags'
+" Plug 'ludovicchabant/vim-gutentags'
 
 Plug 'honza/vim-snippets'
 
@@ -24,13 +24,18 @@ call plug#end()
 
 let padding = '    '
 
+function! GetCocStatus()
+    let result = coc#status()
+    if !empty(result)
+       let result .= " - " . result
+    endif
+    return result
+endfunction
+
 set statusline=%{padding}
 set statusline+=%f
 
-" if !empty(coc#status())
-  set statusline+=\ -\ 
-  set statusline+=%{coc#status()}
-" endif
+set statusline+=%{GetCocStatus()}
 
 set statusline+=%=%4l,%-4c
 set statusline+=%{padding}
@@ -114,6 +119,11 @@ noremap <leader>w :w<cr>
 nmap <silent> <leader>df <Plug>(coc-definition)
 nmap <silent> <leader>rf <Plug>(coc-references)
 nmap <silent> <leader>rr <Plug>(coc-rename)
+
+" augroup status_line
+"     autocmd!
+"     autocmd BufReadPre,FileReadPre * :call NetrwStatusLine()<cr>
+" augroup END
 
 augroup vertical_split
     autocmd!
