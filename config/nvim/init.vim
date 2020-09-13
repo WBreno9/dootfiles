@@ -1,15 +1,17 @@
 call plug#begin(stdpath('data') . '/plugged')
 
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-
 " Plug 'ludovicchabant/vim-gutentags'
 
-Plug 'honza/vim-snippets'
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/completion-nvim'
 
-Plug 'rust-lang/rust.vim'
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
-Plug 'uarun/vim-protobuf'
+Plug 'honza/vim-snippets'
+Plug 'sheerun/vim-polyglot'
+
+" Plug 'rust-lang/rust.vim'
+" Plug 'leafgarland/typescript-vim'
+" Plug 'peitalin/vim-jsx-typescript'
+" Plug 'uarun/vim-protobuf'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -17,28 +19,10 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 
-Plug 'gruvbox-community/gruvbox'
-Plug 'ajgrf/parchment'
+Plug 'rafi/awesome-vim-colorschemes'
+Plug 'dracula/vim'
 
 call plug#end()
-
-let padding = '    '
-
-function! GetCocStatus()
-    let result = coc#status()
-    if !empty(result)
-       let result .= " - " . result
-    endif
-    return result
-endfunction
-
-set statusline=%{padding}
-set statusline+=%f
-
-set statusline+=%{GetCocStatus()}
-
-set statusline+=%=%4l,%-4c
-set statusline+=%{padding}
 
 syntax enable
 set termguicolors
@@ -46,10 +30,31 @@ set termguicolors
 let g:gruvbox_contrast_light="soft"
 let g:gruvbox_contrast_dark="hard"
 
-colorscheme gruvbox
+colorscheme dracula
 set bg=dark
 
 filetype plugin on
+
+set completeopt=menuone,noinsert,noselect
+let g:completion_matching_strategy = ['exact', 'substring', 'fuzzy']
+
+:lua << END
+    require'nvim_lsp'.tsserver.setup{
+        on_attach=require'completion'.on_attach
+    }
+    require'nvim_lsp'.clangd.setup{
+        on_attach=require'completion'.on_attach
+    }
+    require'nvim_lsp'.vimls.setup{
+        on_attach=require'completion'.on_attach
+    }
+    require'nvim_lsp'.html.setup{
+        on_attach=require'completion'.on_attach
+    }
+    require'nvim_lsp'.bashls.setup{
+        on_attach=require'completion'.on_attach
+    }
+END
 
 set nocompatible
 
@@ -71,6 +76,7 @@ set expandtab
 set autoindent
 set smartindent
 
+set ignorecase
 set smartcase
 set incsearch
 set hlsearch!
@@ -82,6 +88,7 @@ set undodir="~/.vim/undodir"
 set undofile
 set hidden
 
+let g:netrw_liststyle=3
 let g:netrw_banner=0
 
 let mapleader=" "
@@ -115,9 +122,9 @@ noremap <leader>t :BTags<cr>
 
 noremap <leader>w :w<cr>
 
-nmap <silent> <leader>df <Plug>(coc-definition)
-nmap <silent> <leader>rf <Plug>(coc-references)
-nmap <silent> <leader>rr <Plug>(coc-rename)
+" nmap <silent> <leader>df <Plug>(coc-definition)
+" nmap <silent> <leader>rf <Plug>(coc-references)
+" nmap <silent> <leader>rr <Plug>(coc-rename)
 
 augroup vertical_split
     autocmd!

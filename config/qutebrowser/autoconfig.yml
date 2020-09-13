@@ -17,8 +17,8 @@ settings:
     https://www.reddit.com: false
   fonts.default_family:
     global: Iosevka
-  statusbar.hide:
-    global: false
+  statusbar.show:
+    global: always
   tabs.show:
     global: switching
   url.default_page:

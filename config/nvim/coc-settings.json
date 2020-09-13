@@ -1,6 +1,6 @@
 {
     "clangd.semanticHighlighting": true,
     "clangd.disableDiagnostics": true,
-    "snippets.snipmate.enable": false,
+    "snippets.snipmate.enable": true,
     "javascript.suggestionActions.enabled": false
 }
