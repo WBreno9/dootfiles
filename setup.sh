@@ -5,7 +5,14 @@ cat > env.sh <<-EOF
 	export DOOTS_DIR="$(pwd)"
 EOF
 
-home_files="tmux.conf xinitrc zshrc bashrc Xmodmap"
+home_files=(
+    'tmux.conf'
+    'xinitrc'
+    'zshrc'
+    'bashrc'
+    'Xmodmap'
+    'emacs.d/init.el'
+)
 
 config_files=(
 	'sxhkd/sxhkdrc'
@@ -19,7 +26,7 @@ config_files=(
 
 declare -a file_pairs
 
-for file in $home_files; do
+for file in "${home_files[@]}"; do
 	file_pairs+=("$(pwd)/home/$file $HOME/.$file")
 done
 
