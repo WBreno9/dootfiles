@@ -14,6 +14,8 @@ export PATH="$HOME/.local/bin:$PATH"
 export EMSCRIPTEN_DIR="/usr/lib/emscripten"
 export PATH="${EMSCRIPTEN_DIR}:${PATH}"
 
+export GO111MODULE=on
+
 export PATH="$(go env GOPATH)/bin:${PATH}"
 
 source /usr/share/fzf/key-bindings.bash
