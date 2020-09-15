@@ -11,7 +11,10 @@ home_files=(
     'zshrc'
     'bashrc'
     'Xmodmap'
-    'emacs.d/init.el'
+#    'emacs.d/init.el' # disabled - using DOOM Emacs configs
+    'doom.d/init.el'
+    'doom.d/config.el'
+    'doom.d/package.el'
 )
 
 config_files=(

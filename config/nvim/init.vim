@@ -5,13 +5,11 @@ call plug#begin(stdpath('data') . '/plugged')
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
 
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
 Plug 'honza/vim-snippets'
 Plug 'sheerun/vim-polyglot'
-
-" Plug 'rust-lang/rust.vim'
-" Plug 'leafgarland/typescript-vim'
-" Plug 'peitalin/vim-jsx-typescript'
-" Plug 'uarun/vim-protobuf'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -52,6 +50,9 @@ let g:completion_matching_strategy = ['exact', 'substring', 'fuzzy']
         on_attach=require'completion'.on_attach
     }
     require'nvim_lsp'.bashls.setup{
+        on_attach=require'completion'.on_attach
+    }
+    require'nvim_lsp'.gopls.setup{
         on_attach=require'completion'.on_attach
     }
 END
