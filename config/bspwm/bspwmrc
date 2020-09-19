@@ -2,6 +2,10 @@
 
 sxhkd &
 
+# Because Java 
+# See https://wiki.archlinux.org/index.php/Bspwm#Problems_with_Java_applications
+wmname LG3D 
+
 if xrand | grep "HDMI1 connected" &> /dev/null ; then
 	bspc monitor HDMI1 -d I II III IV V VI VII VIII IX X
 else

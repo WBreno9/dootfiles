@@ -28,8 +28,8 @@ set termguicolors
 let g:gruvbox_contrast_light="soft"
 let g:gruvbox_contrast_dark="hard"
 
-colorscheme dracula
-set bg=dark
+colorscheme one
+set bg=light
 
 filetype plugin on
 
@@ -103,6 +103,35 @@ nnoremap <leader>es :source $MYVIMRC<cr>
 
 nnoremap <leader>sh :rightb vs +term res 80<cr>
 nnoremap <leader>ex :Ex<cr>
+
+let g:tree_toggle=0
+let g:tree_winnr=0
+let g:tree_last=0
+
+function! ToggleTree()
+    if g:tree_toggle
+        let g:tree_toggle = 0
+        exe g:tree_winnr . "wincmd w"
+        au!
+        quit
+        exe g:tree_last . "wincmd w"
+    else
+        let g:tree_last = winnr()
+
+        vs 
+        wincmd H 
+        vertical res 40
+        Explore
+
+        let g:tree_winnr = winnr()
+        let g:tree_toggle = 1
+
+        exe g:tree_winnr . "wincmd w"
+        au QuitPre <buffer> let g:tree_toggle=0
+    endif
+endfunction
+
+nnoremap <leader>et :call ToggleTree()<cr>
 
 noremap <c-j> :wincmd j<cr>
 noremap <c-k> :wincmd k<cr>

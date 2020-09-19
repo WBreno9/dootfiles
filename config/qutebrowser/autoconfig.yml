@@ -13,6 +13,8 @@ settings:
       w: session-save
       wq: quit --save
       wqa: quit --save
+  content.media_capture:
+    https://meet.google.com: true
   content.notifications:
     https://www.reddit.com: false
   fonts.default_family:
