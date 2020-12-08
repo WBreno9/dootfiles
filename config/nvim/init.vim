@@ -19,17 +19,17 @@ Plug 'tpope/vim-surround'
 
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'dracula/vim'
+Plug 'ajgrf/parchment'
+
+Plug 'neovimhaskell/haskell-vim'
 
 call plug#end()
 
 syntax enable
 set termguicolors
 
-let g:gruvbox_contrast_light="soft"
-let g:gruvbox_contrast_dark="hard"
-
-colorscheme one
-set bg=light
+colorscheme sonokai 
+set bg=dark
 
 filetype plugin on
 
@@ -40,19 +40,22 @@ let g:completion_matching_strategy = ['exact', 'substring', 'fuzzy']
     require'nvim_lsp'.tsserver.setup{
         on_attach=require'completion'.on_attach
     }
-    require'nvim_lsp'.clangd.setup{
-        on_attach=require'completion'.on_attach
-    }
     require'nvim_lsp'.vimls.setup{
         on_attach=require'completion'.on_attach
     }
     require'nvim_lsp'.html.setup{
         on_attach=require'completion'.on_attach
     }
-    require'nvim_lsp'.bashls.setup{
+    require'nvim_lsp'.gopls.setup{
         on_attach=require'completion'.on_attach
     }
-    require'nvim_lsp'.gopls.setup{
+    require'nvim_lsp'.jedi_language_server.setup{
+        on_attach=require'completion'.on_attach
+    }
+    require'nvim_lsp'.rust_analyzer.setup{
+        on_attach=require'completion'.on_attach
+    }
+    require'nvim_lsp'.hls.setup{
         on_attach=require'completion'.on_attach
     }
 END
@@ -89,8 +92,6 @@ set undodir="~/.vim/undodir"
 set undofile
 set hidden
 
-let g:netrw_liststyle=3
-let g:netrw_banner=0
 
 let mapleader=" "
 
@@ -131,6 +132,10 @@ function! ToggleTree()
     endif
 endfunction
 
+let g:netrw_liststyle=3
+" let g:netrw_banner=0
+" let g:netrw_browse_split=4
+
 nnoremap <leader>et :call ToggleTree()<cr>
 
 noremap <c-j> :wincmd j<cr>
@@ -146,15 +151,12 @@ noremap <leader>h :split<cr>
 
 noremap <leader>f :Files<cr>
 noremap <leader>g :GFiles<cr>
-noremap <leader>s :Rg<cr>
+noremap <leader>r :Rg<cr>
+noremap <leader>s :Snippets<cr>
 noremap <leader>c :Commits<cr>
 noremap <leader>t :BTags<cr>
 
 noremap <leader>w :w<cr>
-
-" nmap <silent> <leader>df <Plug>(coc-definition)
-" nmap <silent> <leader>rf <Plug>(coc-references)
-" nmap <silent> <leader>rr <Plug>(coc-rename)
 
 augroup vertical_split
     autocmd!

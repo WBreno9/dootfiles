@@ -1,6 +1,7 @@
 env:
   TERM: alacritty
 
+  # WINDOW
 window:
   padding:
     x: 8
@@ -14,23 +15,25 @@ window:
 
 # Font configuration
 font:
+  # normal:
+  #   family: Misc Tamsyn
+  #   style: Regular 
+
+  # bold:
+  #   family: Misc Tamsyn
+  #   style: Regular 
+
+  # size: 11
+
   normal:
-    family: Inconsolata 
-    style: Medium
+    family: Jetbrains Mono
+    style: Regular 
 
   bold:
-    family: Inconsolata
-    style: Medium 
+    family: Jetbrains Mono 
+    style: Regular 
 
-  italic:
-    family: Inconsolata
-    style: Italic
-
-  bold_italic:
-    family: Inconsolata
-    style: Italic
-
-  size: 11.0
+  size: 10
 
 bell:
   duration: 0

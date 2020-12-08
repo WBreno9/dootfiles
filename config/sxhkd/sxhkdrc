@@ -6,12 +6,17 @@
 super + Return
     alacritty
 
+# GO64
+super + o
+	cool-retro-term
+
 # program launcher
 super + p 
     dmenu_run -b
 
+# main web browser
 super + i
-	qutebrowser
+	brave
 
 super + e
 	emacs
